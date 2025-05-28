@@ -94,8 +94,13 @@ app.use((err, req, res, next) => {
 
 // Start the server on all network interfaces
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, '0.0.0.0', () => {
+const HOST = process.env.HOST || '0.0.0.0';
+app.listen(PORT, HOST, () => {
   console.log(`Server running on port ${PORT}`);
-  console.log(`Server accessible at http://localhost:${PORT}`);
+  if (process.env.NODE_ENV === 'development') {
+    console.log(`Server accessible at http://localhost:${PORT}`);
+  } else {
+    console.log(`Server is running on port ${PORT}`);
+  }
 });
 
