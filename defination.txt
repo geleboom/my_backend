@@ -1,0 +1,53 @@
+     server side
+     1.npm init -y
+     This creates a package.json file.  
+2.npm install express mongoose bcryptjs jsonwebtoken cors body-parser
+express: Web framework for Node.js.
+
+mongoose: MongoDB object modeling.
+
+bcryptjs: For password hashing.
+
+jsonwebtoken: For generating JWT tokens.
+
+cors: To handle cross-origin requests (if you're using different ports for backend and frontend).
+
+body-parser: To parse incoming request bodies.
+   
+   3.creating structure
+backend/
+│
+├── config/
+│   └── db.js              # MongoDB connection setup
+│
+├── models/
+│   ├── User.js            # Schema for Equb/Eder users
+│   ├── Group.js           # Equb/Eder group schema
+│   └── Contribution.js    # Payments or contributions
+│
+├── routes/
+│   ├── auth.js            # Register, login for users
+│   ├── groups.js          # Group creation, joining, details
+│   └── contributions.js   # Track user contributions/payments
+│
+├── controllers/
+│   ├── authController.js
+│   ├── groupController.js
+│   └── contributionController.js
+│
+├── middleware/
+│   └── auth.js            # JWT-based authentication middleware
+│
+├── .env                   # Environment variables
+├── server.js              # Entry point
+└── package.json
+
+models/User.js: Defines the user schema (including role).
+
+routes/admin.js: Handles routes related to admin registration and login.
+
+server.js: Your main server file to run the Express app.
+
+config/db.js: MongoDB connection setup.
+
+.env: Stores environment variables like database connection URL.
