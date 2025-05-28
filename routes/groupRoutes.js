@@ -10,6 +10,9 @@ router.get('/public', groupController.getPublicGroups);
 // Protected routes
 router.use(authMiddleware);
 
+// Get all available groups (for Group Management page)
+router.get('/', groupController.getAvailableGroups);
+
 // Get all equbs
 router.get('/equbs', groupController.getAllEqubs);
 
