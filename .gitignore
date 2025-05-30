@@ -30,4 +30,7 @@ coverage/
 
 # Temporary files
 *.swp
-*.swo 
+*.swo
+
+# Firebase service account key
+config/equb-edir-firebase-adminsdk-fbsvc-cfc1a54a59.json 
